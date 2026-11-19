@@ -1,69 +1,205 @@
-import Image from "next/image";
+"use client";
+
+import ProductDetails from "./OnlineShopping/ProductDetails";
+
+// import prisma from "../lib/prisma";
+// import { addStudent } from "./action";
+// import { connection } from "next/server";
+
+// export const instant = false;
+
+// export default async function Home({ searchParams }) {
+//   await connection();
+
+//   const params = await searchParams;
+
+//   const students = await prisma.student.findMany({
+//     orderBy: {
+//       id: "desc",
+//     },
+//   });
+
+//   return (
+//     <div style={{
+//       maxWidth: "700px",
+//       margin: "40px auto",
+//       fontFamily: "Arial"
+//     }}>
+
+//       <h1>Student Registration Form</h1>
+
+//       {params.saved === "1" && (
+//         <p style={{ color: "green" }}>
+//           Student saved successfully!
+//         </p>
+//       )}
+
+//       <form action={addStudent}>
+
+//         <div style={{ marginBottom: "15px" }}>
+//           <label>Name</label>
+//           <br />
+//           <input
+//             type="text"
+//             name="name"
+//             placeholder="Enter name"
+//             required
+//             style={{ padding: "10px", width: "100%" }}
+//           />
+//         </div>
+
+//         <div style={{ marginBottom: "15px" }}>
+//           <label>Age</label>
+//           <br />
+//           <input
+//             type="number"
+//             name="age"
+//             placeholder="Enter age"
+//             min="1"
+//             required
+//             style={{ padding: "10px", width: "100%" }}
+//           />
+//         </div>
+
+//         <div style={{ marginBottom: "15px" }}>
+//           <label>Course</label>
+//           <br />
+//           <input
+//             type="text"
+//             name="course"
+//             placeholder="Enter course"
+//             required
+//             style={{ padding: "10px", width: "100%" }}
+//           />
+//         </div>
+
+//         <button
+//           type="submit"
+//           style={{
+//             padding: "10px 20px",
+//             backgroundColor: "blue",
+//             color: "white",
+//             border: "none",
+//             cursor: "pointer"
+//           }}
+//         >
+//           Submit
+//         </button>
+
+//       </form>
+
+//       <hr style={{ margin: "30px 0" }} />
+
+//       <h2>Registered Students</h2>
+
+//       {students.length === 0 ? (
+//         <p>No students registered yet.</p>
+//       ) : (
+
+//         <table
+//           border="1"
+//           cellPadding="10"
+//           style={{
+//             width: "100%",
+//             borderCollapse: "collapse"
+//           }}
+//         >
+//           <thead>
+//             <tr>
+//               <th>ID</th>
+//               <th>Name</th>
+//               <th>Age</th>
+//               <th>Course</th>
+//             </tr>
+//           </thead>
+
+//           <tbody>
+//             {students.map((student) => (
+//               <tr key={student.id}>
+//                 <td>{student.id}</td>
+//                 <td>{student.name}</td>
+//                 <td>{student.Age}</td>
+//                 <td>{student.course}</td>
+//               </tr>
+//             ))}
+//           </tbody>
+
+//         </table>
+
+//       )}
+
+//     </div>
+//   );
+// }
+
+
+// import Image from "next/image";
+
+// export default function Home() {
+//   return (
+//     <div>
+//       <h1>Welcome to the Student Registration App</h1>
+//       <Image
+//         src="/student_registration.png"
+//         alt="Student Registration"
+//         width={600}
+//         height={400}
+//       />
+//     </div>
+//   );
+// }
+
+// import Image from "next/image";
+
+// export default function Home() {
+//   return (
+//     <div style={{ padding: "24px" }}>
+//       <h1>Images to be displayed</h1>
+
+//       <div>
+//         <h2>Internal image</h2>
+//         <Image
+//           src="https://images.unsplash.com/photo-1775027814967-cac2cf014ab7?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+//           alt="Tulips."
+//           width={400}
+//           height={300}
+//         />
+//       </div>
+
+//       <div>
+//         <h2>External image</h2>
+//         <Image
+//           src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+//           alt="Sunflower"
+//           width={400}
+//           height={300}
+//         />
+//       </div>
+//     </div>
+//   );
+// }
+
+// export const metadata = {
+//   title: "My website",
+//   description: "This is my website",
+//   keywords: ["website", "nextjs", "react"],
+// };
+
+// export default function Home(){
+//   return(
+//     <div>
+//       <h1>Welcome to my website</h1>
+//     </div>
+//   );
+// }
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.js
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main>
+      <h1>Online Shopping Website</h1>
+      <h2>Welcome to the store.</h2>
+      <p>Explore the latest products.</p>
+      <ProductDetails />
+    </main>
   );
 }
